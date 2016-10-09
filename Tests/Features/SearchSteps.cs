@@ -19,14 +19,13 @@ namespace Tests.Features
         [When(@"I enter empty string into search")]
         public void WhenIEnterString_EmptyIntoSearch()
         {
-            _searcher.Search(string.Empty);
+            _searcher.Search(new SearchRequest());
         }
         
         [Then(@"I get (.*) results")]
         public void ThenIGetResults(int p0)
         {
             Assert.AreEqual(p0, _searcher.NumberOfResults);
-            
         }
     }
 }
